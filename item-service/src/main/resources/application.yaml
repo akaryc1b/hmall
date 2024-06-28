@@ -1,0 +1,12 @@
+server:
+  port: 8081
+hm:
+  db:
+    database: hm-item
+  swagger:
+    title: 黑马商城商品接口文档
+    description: 黑马商商品接口文档
+    email: 1@qq.com
+    package: com.hmall.item.controller
+
+# keytool -genkeypair -alias hmall -keyalg RSA -keypass hmall123 -keystore hmall.jks -storepass hmall123

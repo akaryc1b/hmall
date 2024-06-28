@@ -1,0 +1,5 @@
+hm:
+  db:
+    host: 192.168.15.215 #mysql
+    un: root
+    pw: z910523.

@@ -1,0 +1,28 @@
+server:
+  port: 8084
+
+feign:
+  okhttp:
+    enabled: true
+
+
+hm:
+  db:
+    database: hm-user
+  jwt:
+    location: classpath:hmall.jks
+    alias: hmall
+    password: hmall123
+    tokenTTL: 30m
+  auth:
+    excludePaths:
+      - /search/**
+      - /users/login
+      - /items/**
+      - /hi
+  swagger:
+    title: 黑马商城交易接口文档
+    description: 黑马交易接口文档
+    email: 1@qq.com
+    package: com.hmall.user.controller
+# keytool -genkeypair -alias hmall -keyalg RSA -keypass hmall123 -keystore hmall.jks -storepass hmall123

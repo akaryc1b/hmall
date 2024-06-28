@@ -1,0 +1,17 @@
+server:
+  port: 8085
+
+feign:
+  okhttp:
+    enabled: true
+
+hm:
+  db:
+    database: hm-trade
+  swagger:
+    title: 黑马商城交易接口文档
+    description: 黑马交易接口文档
+    email: 1@qq.com
+    package: com.hmall.trade.controller
+
+# keytool -genkeypair -alias hmall -keyalg RSA -keypass hmall123 -keystore hmall.jks -storepass hmall123

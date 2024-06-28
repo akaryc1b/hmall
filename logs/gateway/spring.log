@@ -1,0 +1,369 @@
+15:34:37:605  INFO 25568 --- [main] com.hmall.gateway.GatewayApplication     : The following 1 profile is active: "local"
+15:34:38:106 ERROR 25568 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:193) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:153) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:748) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
+	at com.hmall.gateway.GatewayApplication.main(GatewayApplication.java:17) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.hmall.common.config.MqConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:361) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:418) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:765) ~[spring-beans-5.3.27.jar:5.3.27]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:764) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:703) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:674) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1684) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:246) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:239) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:229) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:182) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:157) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/amqp/support/converter/MessageConverter
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.27.jar:5.3.27]
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.support.converter.MessageConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 37 common frames omitted
+
+15:34:38:107  WARN 25568 --- [main] o.s.boot.SpringApplication               : Unable to close ApplicationContext
+
+java.lang.IllegalStateException: Failed to introspect Class [com.hmall.common.config.MqConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:361) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:418) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:765) ~[spring-beans-5.3.27.jar:5.3.27]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:764) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:703) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:674) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1684) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:669) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:661) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1302) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:864) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:852) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:839) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:779) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
+	at com.hmall.gateway.GatewayApplication.main(GatewayApplication.java:17) ~[classes/:na]
+Caused by: java.lang.NoClassDefFoundError: org/springframework/amqp/support/converter/MessageConverter
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.27.jar:5.3.27]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.support.converter.MessageConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 25 common frames omitted
+
+15:34:38:109  WARN 25568 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+15:34:38:110  WARN 25568 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+15:34:38:110  WARN 25568 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+15:40:46:899  INFO 26496 --- [main] com.hmall.gateway.GatewayApplication     : The following 1 profile is active: "local"
+15:40:47:207 ERROR 26496 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+java.lang.IllegalStateException: Error processing condition on org.springframework.boot.autoconfigure.jmx.JmxAutoConfiguration.mbeanExporter
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:60) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.context.annotation.ConditionEvaluator.shouldSkip(ConditionEvaluator.java:108) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForBeanMethod(ConfigurationClassBeanDefinitionReader.java:193) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitionsForConfigurationClass(ConfigurationClassBeanDefinitionReader.java:153) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassBeanDefinitionReader.loadBeanDefinitions(ConfigurationClassBeanDefinitionReader.java:129) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:343) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:748) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.boot.web.reactive.context.ReactiveWebServerApplicationContext.refresh(ReactiveWebServerApplicationContext.java:66) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:731) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:408) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:307) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
+	at com.hmall.gateway.GatewayApplication.main(GatewayApplication.java:17) ~[classes/:na]
+Caused by: java.lang.IllegalStateException: Failed to introspect Class [com.hmall.common.config.MqConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:361) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:418) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:765) ~[spring-beans-5.3.27.jar:5.3.27]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:764) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:703) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:674) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1684) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.collectBeanNamesForType(OnBeanCondition.java:246) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:239) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getBeanNamesForType(OnBeanCondition.java:229) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchingBeans(OnBeanCondition.java:182) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.OnBeanCondition.getMatchOutcome(OnBeanCondition.java:157) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	at org.springframework.boot.autoconfigure.condition.SpringBootCondition.matches(SpringBootCondition.java:47) ~[spring-boot-autoconfigure-2.7.12.jar:2.7.12]
+	... 17 common frames omitted
+Caused by: java.lang.NoClassDefFoundError: org/springframework/amqp/support/converter/MessageConverter
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.27.jar:5.3.27]
+	... 33 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.support.converter.MessageConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 37 common frames omitted
+
+15:40:47:209  WARN 26496 --- [main] o.s.boot.SpringApplication               : Unable to close ApplicationContext
+
+java.lang.IllegalStateException: Failed to introspect Class [com.hmall.common.config.MqConfig] from ClassLoader [jdk.internal.loader.ClassLoaders$AppClassLoader@2437c6dc]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:485) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.doWithMethods(ReflectionUtils.java:361) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.util.ReflectionUtils.getUniqueDeclaredMethods(ReflectionUtils.java:418) ~[spring-core-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.lambda$getTypeForFactoryMethod$2(AbstractAutowireCapableBeanFactory.java:765) ~[spring-beans-5.3.27.jar:5.3.27]
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1705) ~[na:na]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.getTypeForFactoryMethod(AbstractAutowireCapableBeanFactory.java:764) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.determineTargetType(AbstractAutowireCapableBeanFactory.java:703) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.predictBeanType(AbstractAutowireCapableBeanFactory.java:674) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.isFactoryBean(AbstractBeanFactory.java:1684) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doGetBeanNamesForType(DefaultListableBeanFactory.java:570) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeanNamesForType(DefaultListableBeanFactory.java:542) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:669) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:661) ~[spring-beans-5.3.27.jar:5.3.27]
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1302) ~[spring-context-5.3.27.jar:5.3.27]
+	at org.springframework.boot.SpringApplication.getExitCodeFromMappedException(SpringApplication.java:864) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.getExitCodeFromException(SpringApplication.java:852) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.handleExitCode(SpringApplication.java:839) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.handleRunFailure(SpringApplication.java:779) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:317) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1303) ~[spring-boot-2.7.12.jar:2.7.12]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1292) ~[spring-boot-2.7.12.jar:2.7.12]
+	at com.hmall.gateway.GatewayApplication.main(GatewayApplication.java:17) ~[classes/:na]
+Caused by: java.lang.NoClassDefFoundError: org/springframework/amqp/support/converter/MessageConverter
+	at java.base/java.lang.Class.getDeclaredMethods0(Native Method) ~[na:na]
+	at java.base/java.lang.Class.privateGetDeclaredMethods(Class.java:3167) ~[na:na]
+	at java.base/java.lang.Class.getDeclaredMethods(Class.java:2310) ~[na:na]
+	at org.springframework.util.ReflectionUtils.getDeclaredMethods(ReflectionUtils.java:467) ~[spring-core-5.3.27.jar:5.3.27]
+	... 21 common frames omitted
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.support.converter.MessageConverter
+	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:582) ~[na:na]
+	at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:178) ~[na:na]
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:521) ~[na:na]
+	... 25 common frames omitted
+
+15:40:47:210  WARN 26496 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+15:40:47:210  WARN 26496 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+15:40:47:211  WARN 26496 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+15:41:28:332  INFO 14016 --- [main] com.hmall.gateway.GatewayApplication     : The following 1 profile is active: "local"
+15:41:28:751  INFO 14016 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=736a48ce-6e1a-356e-a480-3ea07aad061f
+15:41:28:797  INFO 14016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:41:28:797  INFO 14016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig' of type [org.springframework.cloud.client.loadbalancer.reactive.LoadBalancerBeanPostProcessorAutoConfiguration$ReactorDeferringLoadBalancerFilterConfig] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:41:28:798  INFO 14016 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'reactorDeferringLoadBalancerExchangeFilterFunction' of type [org.springframework.cloud.client.loadbalancer.reactive.DeferringLoadBalancerExchangeFilterFunction] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+15:41:29:187 DEBUG 14016 --- [main] c.h.gateway.routers.DynamicRouteLoader   : 监听到路由配置变更，[
+    {
+        "id": "item",
+        "predicates": [{
+            "name": "Path",
+            "args": {"_genkey_0":"/items/**", "_genkey_1":"/search/**"}
+        }],
+        "filters": [],
+        "uri": "lb://item-service"
+    },
+    {
+        "id": "cart",
+        "predicates": [{
+            "name": "Path",
+            "args": {"_genkey_0":"/carts/**"}
+        }],
+        "filters": [],
+        "uri": "lb://cart-service"
+    },
+    {
+        "id": "user",
+        "predicates": [{
+            "name": "Path",
+            "args": {"_genkey_0":"/users/**", "_genkey_1":"/addresses/**"}
+        }],
+        "filters": [],
+        "uri": "lb://user-service"
+    },
+    {
+        "id": "trade",
+        "predicates": [{
+            "name": "Path",
+            "args": {"_genkey_0":"/orders/**"}
+        }],
+        "filters": [],
+        "uri": "lb://trade-service"
+    },
+    {
+        "id": "pay",
+        "predicates": [{
+            "name": "Path",
+            "args": {"_genkey_0":"/pay-orders/**"}
+        }],
+        "filters": [],
+        "uri": "lb://pay-service"
+    }
+]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [After]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Before]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Between]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Cookie]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Header]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Host]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Method]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Path]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Query]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [ReadBody]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [RemoteAddr]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+15:41:31:611  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [Weight]
+15:41:31:612  INFO 14016 --- [main] o.s.c.g.r.RouteDefinitionRouteLocator    : Loaded RoutePredicateFactory [CloudFoundryRouteService]
+15:41:32:998  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [RpcClientFactory] create a new rpc client of 923258b1-13f1-46b4-81e5-a8c2dd70fe75
+15:41:32:998  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] RpcClient init label, labels = {module=naming, source=sdk}
+15:41:32:999  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] RpcClient init, ServerListFactory = com.alibaba.nacos.client.naming.core.ServerListManager
+15:41:32:999  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Registry connection listener to current client:com.alibaba.nacos.client.naming.remote.gprc.redo.NamingGrpcRedoService
+15:41:32:999  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Register server push request handler:com.alibaba.nacos.client.naming.remote.gprc.NamingPushRequestHandler
+15:41:33:001  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Try to connect to server on start up, server: {serverIp = '192.168.15.215', server main port = 8848}
+15:41:33:127  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Success to connect to server [192.168.15.215:8848] on start up, connectionId = 1719560493225_192.168.15.235_13651
+15:41:33:127  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$ConnectResetRequestHandler
+15:41:33:127  INFO 14016 --- [main] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Register server push request handler:com.alibaba.nacos.common.remote.client.RpcClient$$Lambda$464/0x000000080043d840
+15:41:33:127  INFO 14016 --- [com.alibaba.nacos.client.remote.worker] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Notify connected event to listeners.
+15:41:33:652  INFO 14016 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 6
+15:41:33:654  INFO 14016 --- [nacos-grpc-client-executor-5] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 6
+15:41:33:945  INFO 14016 --- [main] o.s.b.web.embedded.netty.NettyWebServer  : Netty started on port 8080
+15:41:36:112  INFO 14016 --- [main] c.a.c.n.registry.NacosServiceRegistry    : nacos registry, DEFAULT_GROUP gateway 192.168.209.1:8080 register finished
+15:41:36:122  INFO 14016 --- [main] com.hmall.gateway.GatewayApplication     : Started GatewayApplication in 13.829 seconds (JVM running for 15.164)
+15:41:36:124  INFO 14016 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=gateway.yaml, group=DEFAULT_GROUP
+15:41:36:124  INFO 14016 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=gateway, group=DEFAULT_GROUP
+15:41:36:125  INFO 14016 --- [main] c.a.c.n.refresh.NacosContextRefresher    : [Nacos Config] Listening config: dataId=gateway-local.yaml, group=DEFAULT_GROUP
+15:41:36:656  INFO 14016 --- [nacos-grpc-client-executor-11] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 7
+15:41:36:657  INFO 14016 --- [nacos-grpc-client-executor-11] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 7
+15:42:27:700  INFO 14016 --- [nacos-grpc-client-executor-22] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 13
+15:42:27:701  INFO 14016 --- [nacos-grpc-client-executor-22] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 13
+15:42:28:713  INFO 14016 --- [nacos-grpc-client-executor-25] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 14
+15:42:28:718  INFO 14016 --- [nacos-grpc-client-executor-25] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 14
+15:42:36:842  INFO 14016 --- [nacos-grpc-client-executor-29] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 17
+15:42:36:843  INFO 14016 --- [nacos-grpc-client-executor-29] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 17
+15:42:50:804  INFO 14016 --- [nacos-grpc-client-executor-35] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 18
+15:42:50:806  INFO 14016 --- [nacos-grpc-client-executor-35] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 18
+15:42:52:915  INFO 14016 --- [nacos-grpc-client-executor-38] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 21
+15:42:52:915  INFO 14016 --- [nacos-grpc-client-executor-38] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 21
+15:58:14:705  INFO 14016 --- [nacos-grpc-client-executor-266] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 23
+15:58:14:709  INFO 14016 --- [nacos-grpc-client-executor-266] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 23
+15:58:35:219  INFO 14016 --- [nacos-grpc-client-executor-271] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 25
+15:58:35:221  INFO 14016 --- [nacos-grpc-client-executor-271] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 25
+16:03:14:722  INFO 14016 --- [nacos-grpc-client-executor-335] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 28
+16:03:14:727  INFO 14016 --- [nacos-grpc-client-executor-335] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 28
+16:03:34:498  INFO 14016 --- [nacos-grpc-client-executor-342] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 32
+16:03:34:500  INFO 14016 --- [nacos-grpc-client-executor-342] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 32
+16:04:48:009  INFO 14016 --- [nacos-grpc-client-executor-359] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 33
+16:04:48:011  INFO 14016 --- [nacos-grpc-client-executor-359] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 33
+16:05:07:293  INFO 14016 --- [nacos-grpc-client-executor-364] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 35
+16:05:07:294  INFO 14016 --- [nacos-grpc-client-executor-364] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 35
+16:10:03:902  INFO 14016 --- [nacos-grpc-client-executor-425] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 40
+16:10:03:905  INFO 14016 --- [nacos-grpc-client-executor-425] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 40
+16:10:24:486  INFO 14016 --- [nacos-grpc-client-executor-429] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 43
+16:10:24:488  INFO 14016 --- [nacos-grpc-client-executor-429] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 43
+16:15:09:990  INFO 14016 --- [nacos-grpc-client-executor-492] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 46
+16:15:09:993  INFO 14016 --- [nacos-grpc-client-executor-492] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 46
+16:15:29:468  WARN 14016 --- [boundedElastic-7] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: pay-service
+16:15:32:791  INFO 14016 --- [nacos-grpc-client-executor-497] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 49
+16:15:32:793  INFO 14016 --- [nacos-grpc-client-executor-497] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 49
+16:36:36:712  INFO 14016 --- [nacos-grpc-client-executor-773] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 51
+16:36:36:717  INFO 14016 --- [nacos-grpc-client-executor-773] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 51
+16:36:59:441  INFO 14016 --- [nacos-grpc-client-executor-781] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 54
+16:36:59:444  INFO 14016 --- [nacos-grpc-client-executor-781] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 54
+16:39:29:763  INFO 14016 --- [nacos-grpc-client-executor-815] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 57
+16:39:29:764  INFO 14016 --- [nacos-grpc-client-executor-815] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 57
+16:39:50:006  INFO 14016 --- [nacos-grpc-client-executor-821] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 59
+16:39:50:008  INFO 14016 --- [nacos-grpc-client-executor-821] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 59
+16:44:05:076  INFO 14016 --- [nacos-grpc-client-executor-876] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 63
+16:44:05:078  INFO 14016 --- [nacos-grpc-client-executor-876] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 63
+16:44:11:902  INFO 14016 --- [nacos-grpc-client-executor-880] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 64
+16:44:11:903  INFO 14016 --- [nacos-grpc-client-executor-880] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 64
+16:44:26:161  INFO 14016 --- [nacos-grpc-client-executor-882] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 68
+16:44:26:163  INFO 14016 --- [nacos-grpc-client-executor-882] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 68
+16:44:34:396  INFO 14016 --- [nacos-grpc-client-executor-884] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 70
+16:44:34:398  INFO 14016 --- [nacos-grpc-client-executor-884] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 70
+16:48:24:828  INFO 14016 --- [nacos-grpc-client-executor-938] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 71
+16:48:24:828  INFO 14016 --- [nacos-grpc-client-executor-938] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 71
+16:48:29:748  INFO 14016 --- [nacos-grpc-client-executor-939] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 72
+16:48:29:749  INFO 14016 --- [nacos-grpc-client-executor-939] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 72
+16:48:46:219  INFO 14016 --- [nacos-grpc-client-executor-946] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 75
+16:48:46:221  INFO 14016 --- [nacos-grpc-client-executor-946] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 75
+16:48:51:841  INFO 14016 --- [nacos-grpc-client-executor-948] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 78
+16:48:51:843  INFO 14016 --- [nacos-grpc-client-executor-948] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 78
+16:51:14:062  INFO 14016 --- [nacos-grpc-client-executor-979] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 79
+16:51:14:064  INFO 14016 --- [nacos-grpc-client-executor-979] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 79
+16:51:33:841  INFO 14016 --- [nacos-grpc-client-executor-983] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 81
+16:51:33:842  INFO 14016 --- [nacos-grpc-client-executor-983] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 81
+17:09:10:564  INFO 14016 --- [nacos-grpc-client-executor-1246] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 85
+17:09:10:568  INFO 14016 --- [nacos-grpc-client-executor-1246] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 85
+17:09:16:484  INFO 14016 --- [nacos-grpc-client-executor-1247] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 86
+17:09:16:486  INFO 14016 --- [nacos-grpc-client-executor-1247] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 86
+17:09:33:458  INFO 14016 --- [nacos-grpc-client-executor-1250] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 90
+17:09:33:459  INFO 14016 --- [nacos-grpc-client-executor-1250] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 90
+17:09:38:479  INFO 14016 --- [nacos-grpc-client-executor-1254] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 92
+17:09:38:482  INFO 14016 --- [nacos-grpc-client-executor-1254] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 92
+17:09:47:716  INFO 14016 --- [nacos-grpc-client-executor-1256] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 93
+17:09:47:717  INFO 14016 --- [nacos-grpc-client-executor-1256] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 93
+17:10:08:808  INFO 14016 --- [nacos-grpc-client-executor-1263] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 96
+17:10:08:809  INFO 14016 --- [nacos-grpc-client-executor-1263] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 96
+17:17:08:408  INFO 14016 --- [nacos-grpc-client-executor-1364] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 99
+17:17:08:412  INFO 14016 --- [nacos-grpc-client-executor-1364] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 99
+17:17:19:996  WARN 14016 --- [boundedElastic-13] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: cart-service
+17:17:31:009  INFO 14016 --- [nacos-grpc-client-executor-1368] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 101
+17:17:31:012  INFO 14016 --- [nacos-grpc-client-executor-1368] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 101
+17:19:51:621  INFO 14016 --- [nacos-grpc-client-executor-1404] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 104
+17:19:51:622  INFO 14016 --- [nacos-grpc-client-executor-1404] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 104
+17:19:52:503  WARN 14016 --- [boundedElastic-14] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: cart-service
+17:19:54:243  WARN 14016 --- [boundedElastic-14] o.s.c.l.core.RoundRobinLoadBalancer      : No servers available for service: cart-service
+17:20:13:526  INFO 14016 --- [nacos-grpc-client-executor-1409] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 107
+17:20:13:527  INFO 14016 --- [nacos-grpc-client-executor-1409] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 107
+17:42:38:527  INFO 14016 --- [nacos-grpc-client-executor-1742] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 113
+17:42:38:553  INFO 14016 --- [nacos-grpc-client-executor-1742] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 113
+17:44:04:563  INFO 14016 --- [nacos-grpc-client-executor-1764] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Receive server push request, request = NotifySubscriberRequest, requestId = 118
+17:44:04:564  INFO 14016 --- [nacos-grpc-client-executor-1764] com.alibaba.nacos.common.remote.client   : [923258b1-13f1-46b4-81e5-a8c2dd70fe75] Ack server push request, request = NotifySubscriberRequest, requestId = 118
+17:44:08:060  WARN 14016 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:44:08:060  WARN 14016 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:44:08:062  WARN 14016 --- [Thread-5] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:44:08:074  WARN 14016 --- [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:44:08:187  INFO 14016 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registering from Nacos Server now...
+17:44:08:194  INFO 14016 --- [SpringApplicationShutdownHook] c.a.c.n.registry.NacosServiceRegistry    : De-registration finished.
+17:44:08:525  INFO 14016 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown rpc client, set status to shutdown
+17:44:08:525  INFO 14016 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Shutdown client event executor java.util.concurrent.ScheduledThreadPoolExecutor@7ba91013[Running, pool size = 2, active threads = 2, queued tasks = 0, completed tasks = 0]
+17:44:08:526  INFO 14016 --- [SpringApplicationShutdownHook] com.alibaba.nacos.common.remote.client   : Close current connection 1719560493225_192.168.15.235_13651
+17:44:08:527  INFO 14016 --- [nacos-grpc-client-executor-1767] c.a.n.c.remote.client.grpc.GrpcClient    : [1719560493225_192.168.15.235_13651]Ignore complete event,isRunning:false,isAbandon=false
+17:44:08:541  INFO 14016 --- [SpringApplicationShutdownHook] c.a.n.c.remote.client.grpc.GrpcClient    : Shutdown grpc executor java.util.concurrent.ThreadPoolExecutor@4654c1b3[Running, pool size = 5, active threads = 0, queued tasks = 0, completed tasks = 1768]
